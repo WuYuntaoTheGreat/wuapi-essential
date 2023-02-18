@@ -1,0 +1,24 @@
+{
+  "name": "@wuapi/essential",
+  "version": "1.0.0",
+  "description": "Essential definition of WU-API",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WuYuntaoTheGreat/wuapi-essential.git"
+  },
+  "keywords": [
+    "WU",
+    "API",
+    "Essential"
+  ],
+  "author": "Wu Yuntao <wuyuntao@fiture.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WuYuntaoTheGreat/wuapi-essential/issues"
+  },
+  "homepage": "https://github.com/WuYuntaoTheGreat/wuapi-essential#readme"
+}
