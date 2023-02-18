@@ -4,6 +4,8 @@
   "description": "Essential definition of WU-API",
   "main": "lib/index.js",
   "scripts": {
+    "build": "tsc && tsc -p tsconfig.esm.json",
+    "clean": "rm -rf lib esm",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/WuYuntaoTheGreat/wuapi-essential/issues"
   },
-  "homepage": "https://github.com/WuYuntaoTheGreat/wuapi-essential#readme"
+  "homepage": "https://github.com/WuYuntaoTheGreat/wuapi-essential#readme",
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
 }
