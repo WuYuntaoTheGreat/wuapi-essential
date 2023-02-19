@@ -372,14 +372,6 @@ export enum $EntityType {
 }
 
 /**
- * The direction of entity.
- */
-export enum $EntityDirection {
-  V2T,  // Virgo to Taurus
-  T2V,  // Taurus to Virgo
-}
-
-/**
  * Entity
  */
 export class $Entity extends $Commentable {
@@ -387,11 +379,6 @@ export class $Entity extends $Commentable {
    * True if this entity is abstract (shall not instantiate)
    */
   isAbstract: boolean = false
-
-  /**
-   * The direction of this entity.
-   */
-  direction: $EntityDirection | null = null
 
   /**
    * The path of the parent entity, optional.
@@ -482,7 +469,6 @@ export class $Entity extends $Commentable {
     const entity = new $Entity(data.type) // enum as number
     entity.comment      = data.comment    ?? ""
     entity.isAbstract   = data.isAbstract!
-    entity.direction    = data.direction  ?? null // enum as number
     entity.path         = data.path       ?? null
     entity.method       = data.method     ?? null // enum as number
 

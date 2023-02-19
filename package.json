@@ -1,6 +1,6 @@
 {
   "name": "@wuapi/essential",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Essential definition of WU-API",
   "main": "lib/index.js",
   "scripts": {
