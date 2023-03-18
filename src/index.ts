@@ -132,6 +132,15 @@ export class $Enum extends $Commentable {
    * @returns The first item (by number value) of this Enumeration
    */
   first(): $EnumItem | null {
+    const k = this.firstName()
+    return null == k ? null : this.enumMap[k]
+  }
+
+  /**
+   * Get the name of the first item.
+   * @returns The name of the first (by number value) item of this Enumeration.
+   */
+  firstName(): string | null {
     var i: number | null = null
     var k: string | null = null
     for(const key in this.enumMap){
@@ -141,8 +150,8 @@ export class $Enum extends $Commentable {
         k = key
       }
     }
-
-    return k == null ? null : this.enumMap[k]
+    // return k == null ? null : this.enumMap[k]
+    return k
   }
 
   /**
