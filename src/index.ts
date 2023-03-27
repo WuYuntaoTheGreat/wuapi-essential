@@ -8,6 +8,11 @@ export class $Commentable {
    * The comment
    */
   comment: string = ""
+
+  /**
+   * The configuration map of this field.
+   */
+  config: { [key: string]: string } | null = null
 }
 
 export enum $ReqMethod {
@@ -113,6 +118,7 @@ export class $EnumItem extends $Commentable {
     if(!notNU(data.value)) return null
     const item = new $EnumItem(data.value)
     item.comment    = data.comment ?? ""
+    item.config     = data.config
     item.realname   = data.realname ?? null
     return item
   }
@@ -178,6 +184,8 @@ export class $Enum extends $Commentable {
     if(!notNU(data.enumMap)) return null
     const enu = new $Enum()
     enu.comment = data.comment ?? ""
+    enu.config  = data.config
+
     for(let i in data.enumMap){
       const item = $EnumItem.load(data.enumMap[i])
       if(notNU(item)){
@@ -343,11 +351,6 @@ export class $Field extends $Commentable {
   fixedValue: any | null = null
 
   /**
-   * The configuration map of this field.
-   */
-  config: { [key: string]: string } | null = null
-
-  /**
    * Constructor of Entity Field.
    * @param type The type of this field
    */
@@ -368,6 +371,7 @@ export class $Field extends $Commentable {
     if(!notNU(filedType)) return null
     const field = new $Field(filedType!)
     field.comment           = data.comment    ?? ""
+    field.config            = data.config
     field.realname          = data.realname   ?? null
     field.isOptional        = data.isOptional
     field.isPathParameter   = data.isPathParameter
@@ -483,6 +487,7 @@ export class $Entity extends $Commentable {
       data.fieldsLocal, data.genericMap)) return null
     const entity = new $Entity(data.type) // enum as number
     entity.comment      = data.comment    ?? ""
+    entity.config       = data.config
     entity.isAbstract   = data.isAbstract!
     entity.path         = data.path       ?? null
     entity.method       = data.method     ?? null // enum as number
