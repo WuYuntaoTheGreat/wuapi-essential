@@ -343,9 +343,9 @@ export class $Field extends $Commentable {
   fixedValue: any | null = null
 
   /**
-   * The configuration map of creating demo data to this field.
+   * The configuration map of this field.
    */
-  demoConfig: { [key: string]: string } | null = null
+  config: { [key: string]: string } | null = null
 
   /**
    * Constructor of Entity Field.
@@ -372,7 +372,7 @@ export class $Field extends $Commentable {
     field.isOptional        = data.isOptional
     field.isPathParameter   = data.isPathParameter
     field.fixedValue        = data.fixedValue
-    field.demoConfig        = data.demoConfig
+    field.config            = data.config
     return field
   }
 }
